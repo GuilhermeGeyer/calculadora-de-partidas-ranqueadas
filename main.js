@@ -1,6 +1,6 @@
-const v = 70, d = 5
+const v = 110, d = 15
 
-function imprimeRanque(vitorias, derrotas) {
+function calculaRanque(vitorias, derrotas) {
     let saldo = vitorias - derrotas
     let ranque = ''
     if (saldo <= 10) {
@@ -18,7 +18,9 @@ function imprimeRanque(vitorias, derrotas) {
     } else {
         ranque = 'Imortal'
     }
-    console.log(`O Herói tem saldo de ${saldo} e está no nível de ${ranque}`)
+    return [saldo, ranque]
 }
 
-imprimeRanque(v, d)
+const [saldo, ranque] = calculaRanque(v, d)
+
+console.log(`O Herói tem saldo de ${saldo} e está no nível de ${ranque}`)
